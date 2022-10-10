@@ -5,13 +5,10 @@ let NOMBRE = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 let SYMBOLE = ['&', '*', '$', '(', ')', '!', '?'];
 var MDP = '';
 let CHOIXLISTE = [];
-var slider = document.getElementById("STRONG");
-var output = document.getElementById("STRONGVALUE");
-output.innerHTML = slider.value; // Display the default slider value
 
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  output.innerHTML = this.value;
+
+function VALUE() {
+  document.getElementById("STRONGVALUE").innerText = document.getElementById("STRONG").value;
 }
 
 
@@ -22,7 +19,7 @@ function getRandomInt(max) {
   }
 
 function NEWMDP() {
-    CHOIXLISTE.splice(0, CHOIXLISTE.length);
+    CHOIXLISTE = [];
     MDP = '';
 
     STRONG = document.getElementById("STRONG").value;
@@ -50,15 +47,15 @@ function NEWMDP() {
             CHOIXLISTE.push(SYMBOLE[i]);
         }
     }
+    
+    if (CHOIXLISTE.length == 0) {
+        document.getElementById("EP-MDP").innerText = 'Veuillez cocher une case au minimum !';
+    } else {
 
+        for(let i = 0; i < STRONG; i++){
+            MDP = MDP + CHOIXLISTE[getRandomInt(CHOIXLISTE.length)];
+        }
 
-
-    for(let i = 0; i < STRONG; i++){
-        MDP = MDP + CHOIXLISTE[getRandomInt(CHOIXLISTE.length)];
+        document.getElementById("EP-MDP").innerText = MDP;
     }
-
-    document.getElementById("EP-MDP").innerText = MDP;
-    console.log(MDP);
-
-    console.log(CHOIXLISTE);
 }
