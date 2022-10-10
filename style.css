@@ -67,3 +67,8 @@ h1{
     background: #a4ffaf;
     cursor: pointer;
   }
+
+#LOGO{
+    width: 100px;
+    height: auto;
+}

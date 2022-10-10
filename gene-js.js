@@ -7,7 +7,7 @@ var MDP = '';
 let CHOIXLISTE = [];
 
 function VALUE() {
-  document.getElementById("STRONGVALUE").innerText = document.getElementById("STRONG").value;
+  document.getElementById("STRONGVALUE").innerText = document.getElementById("STRONG").value + ' characters';
 }
 
 function getRandomInt(max) {
@@ -45,7 +45,7 @@ function NEWMDP() {
     }
     
     if (CHOIXLISTE.length == 0) {
-        document.getElementById("EP-MDP").innerText = 'Veuillez cocher une case au minimum !';
+        document.getElementById("EP-MDP").innerText = 'Please check one box at least !';
     } else {
 
         for(let i = 0; i < STRONG; i++){
