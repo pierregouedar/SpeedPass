@@ -8,42 +8,44 @@ body{
 }
 button{
     margin-top: 20px;
+    margin-bottom: 40px;
     background-color: #a4ffaf;
     color: #0a4412;
     font-size: 18px;
     border: 0;
+    border-radius: 20px;
     width: 80%;
-    height: 20%;
+    height: 60px;
     opacity: 0.8;
     transition: .3s;
 }
 button:hover{
     opacity: 1;
-    width: 81%;
-    height: 21%;
 }
 h1{
-    color: #6b6875;
+    color: #908c9c;
 }
 .inputlist{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin: auto;
     width: 400px;
-    height: 400px;
+    height: fit-content;
+    border-radius: 15px;
     background-color: #24232b;
 }
 #EP-MDP{
     font-size: 20px ;
 }
 #STRONG {
+    -webkit-appearance: none;
     width: 300px;
     height: 25px;
     background: #3f3d4b;
     outline: none;
     opacity: 0.7;
+    -webkit-transition: .2s;
     transition: opacity .3s;
   }
 #STRONG:hover {
@@ -51,6 +53,7 @@ h1{
   }
   
 #STRONG::-webkit-slider-thumb {
+    -webkit-appearance: none;
     appearance: none;
     width: 25px;
     height: 25px;
