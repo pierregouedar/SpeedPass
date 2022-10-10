@@ -53,5 +53,13 @@ function NEWMDP() {
         }
 
         document.getElementById("EP-MDP").innerText = MDP;
+        navigator.clipboard.writeText(MDP);
+
+        function popup(){
+            window.alert("Copied in the clipboard !");
+        }
+
+        setTimeout(popup, 10);
+        
     }
 }
