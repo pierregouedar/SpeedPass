@@ -5,6 +5,16 @@ let NOMBRE = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 let SYMBOLE = ['&', '*', '$', '(', ')', '!', '?'];
 var MDP = '';
 let CHOIXLISTE = [];
+var slider = document.getElementById("STRONG");
+var output = document.getElementById("STRONGVALUE");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+
 
 
 function getRandomInt(max) {
@@ -12,39 +22,43 @@ function getRandomInt(max) {
   }
 
 function NEWMDP() {
-    CHOIXLISTE = []
+    CHOIXLISTE.splice(0, CHOIXLISTE.length);
+    MDP = '';
 
     STRONG = document.getElementById("STRONG").value;
 
     if (document.getElementById("LMAJ").checked === true) {
-        for(let i = 0; i <= LMAJ.length; i++){
+        for(let i = 0; i < LMAJ.length; i++){
             CHOIXLISTE.push(LMAJ[i]);
         }
     }
 
     if (document.getElementById("LMIN").checked === true) {
-        for(let i = 0; i <= LMIN.length; i++){
+        for(let i = 0; i < LMIN.length; i++){
             CHOIXLISTE.push(LMIN[i]);
         }
     }
 
     if (document.getElementById("NOMBRE").checked === true) {
-        for(let i = 0; i <= NOMBRE.length; i++){
+        for(let i = 0; i < NOMBRE.length; i++){
             CHOIXLISTE.push(NOMBRE[i]);
         }
     }
 
     if (document.getElementById("SYMBOLE").checked === true) {
-        for(let i = 0; i <= SYMBOLE.length; i++){
+        for(let i = 0; i < SYMBOLE.length; i++){
             CHOIXLISTE.push(SYMBOLE[i]);
         }
     }
 
 
 
-    for(let i = 0; i <= STRONG; i++){
+    for(let i = 0; i < STRONG; i++){
         MDP = MDP + CHOIXLISTE[getRandomInt(CHOIXLISTE.length)];
     }
 
-    document.getElementById("EP-MDP").innerText = MPD;
+    document.getElementById("EP-MDP").innerText = MDP;
+    console.log(MDP);
+
+    console.log(CHOIXLISTE);
 }
