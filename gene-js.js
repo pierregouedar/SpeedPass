@@ -6,13 +6,9 @@ let SYMBOLE = ['&', '*', '$', '(', ')', '!', '?'];
 var MDP = '';
 let CHOIXLISTE = [];
 
-
 function VALUE() {
   document.getElementById("STRONGVALUE").innerText = document.getElementById("STRONG").value;
 }
-
-
-
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
