@@ -14,6 +14,12 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
+function copy(){
+    navigator.clipboard.writeText(MDP);
+    window.alert("Copied in the clipboard !");
+}
+
+
 function NEWMDP() {
     CHOIXLISTE = [];
     MDP = '';
@@ -53,13 +59,6 @@ function NEWMDP() {
         }
 
         document.getElementById("EP-MDP").innerText = MDP;
-        navigator.clipboard.writeText(MDP);
-
-        function popup(){
-            window.alert("Copied in the clipboard !");
-        }
-
-        setTimeout(popup, 10);
         
     }
 }
